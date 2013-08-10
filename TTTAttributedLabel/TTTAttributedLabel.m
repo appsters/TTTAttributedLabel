@@ -235,6 +235,10 @@ static inline NSAttributedString * NSAttributedStringBySettingColorFromContext(N
     return self;
 }
 
+- (void)awakeFromNib {
+    [self setText:super.text afterInheritingLabelAttributesAndConfiguringWithBlock:nil];
+}
+
 - (void)commonInit {
     self.userInteractionEnabled = YES;
     self.multipleTouchEnabled = NO;
